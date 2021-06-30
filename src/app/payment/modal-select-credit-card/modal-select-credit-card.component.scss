@@ -1,0 +1,41 @@
+:host {
+  @keyframes btn {
+    0% {
+      opacity: 0%;
+    }
+    25% {
+      opacity: 25%;
+    }
+    50% {
+      opacity: 75%;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+
+  .form-field {
+    width: 100% !important;
+  }
+
+  .m-b-30 {
+    margin-bottom: 30px;
+  }
+
+  .div-button {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    .pay-button {
+      background-color: #42b883;
+      color: white;
+      width: 200px;
+      font-family: "Lato";
+      font-size: 19px;
+      animation-name: btn;
+      animation-duration: 0.5s;
+    }
+  }
+
+}

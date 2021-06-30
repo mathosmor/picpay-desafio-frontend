@@ -1,0 +1,23 @@
+<app-header [title]="title"></app-header>
+
+<form [formGroup]="formPayment">
+  <mat-form-field appearance="fill" class="form-field m-b-30">
+    <mat-label>Insira o valor do pagamento</mat-label>
+    <input [id]="'modal-select-credit-card--input-value'" matInput currencyMask formControlName="paymentValue" [options]="maskOptions">
+    <mat-error *ngIf="formPayment.controls.paymentValue.errors && formPayment.controls.paymentValue.touched">
+      {{getErrorMessageValue()}}</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Selecione cartão</mat-label>
+    <mat-select [id]="'modal-select-credit-card--select-credit-card'" disableRipple="true" [(ngModel)]="selected" formControlName="paymentCreditCard">
+      <mat-option *ngFor="let creditCard of dataCreditCard" [value]="creditCard">Cartão com final
+        {{creditCard.card_number | creditCard}}</mat-option>
+    </mat-select>
+    <mat-error *ngIf="formPayment.controls.paymentCreditCard.errors && formPayment.controls.paymentCreditCard.touched">
+      {{getErrorMessageSelect()}}</mat-error>
+  </mat-form-field>
+
+  <div class="div-button">
+    <button [id]="'modal-select-credit-card--btn-pay'" mat-raised-button *ngIf="!formPayment.invalid" (click)="savePayment()" class="pay-button">Pagar</button>
+  </div>
+</form>

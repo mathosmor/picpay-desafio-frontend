@@ -1,0 +1,18 @@
+<div *ngIf="!listItem" class="uploader-status">
+    <mat-spinner *ngIf="!listItem"></mat-spinner>
+</div>
+
+<mat-list *ngIf="listItem" class="list-content">
+    <mat-list-item *ngFor="let item of listItem; let i = index ;last as last">
+        <img [id]="'card-list--img-avatar-' + i" matListAvatar class="list-avatar"
+            [src]="item.img" [alt]="item.name">
+        <h3 [id]="'card-list--txt-name-' + i" matLine class="list-name"> {{item.name}} </h3>
+        <p matLine class="list-item">
+            <span [id]="'card-list--txt-id-' + i" class="list-id">ID: {{item.id}} </span>
+            <span [id]="'card-list--txt-username-' + i" class="list-username"> - Username: {{item.username}} </span>
+        </p>
+        <button mat-raised-button (click)="buttonClickResponse(item)" class="list-button"
+            [id]="'card-list--btn-pay-' + i">Pagar</button>
+        <mat-divider *ngIf="!last"></mat-divider>
+    </mat-list-item>
+</mat-list>
