@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule, MatListModule, MatProgressSpinnerModule, MatToolbarModule } from '@angular/material';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { CardListComponent } from './card-list.component';
 
@@ -17,8 +16,6 @@ describe('CardListComponent', () => {
         MatButtonModule,
         MatProgressSpinnerModule,
         MatToolbarModule,
-        NgxSkeletonLoaderModule
-
       ]
     })
       .compileComponents();

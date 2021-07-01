@@ -3,10 +3,6 @@ import { CommonModule } from '@angular/common';
 import { CardListComponent } from './card-list/card-list.component';
 import { MatButtonModule, MatListModule, MatProgressSpinnerModule, MatToolbarModule } from '@angular/material';
 import { HeaderComponent } from './header/header.component';
-import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
-
-
-
 
 @NgModule({
   imports: [
@@ -15,7 +11,6 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MatButtonModule,
     MatProgressSpinnerModule,
     MatToolbarModule,
-    NgxSkeletonLoaderModule
   ],
   declarations: [
     CardListComponent,

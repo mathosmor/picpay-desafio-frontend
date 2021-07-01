@@ -7,9 +7,6 @@ export interface User {
 
 export interface DataUser {
   user: {
-    item: {id: number;
-    name: string;
-    img: string;
-    username: string;}
+    item: User
   }
 }
