@@ -4,6 +4,8 @@
 
 **Instalação do Angular CLI:**
 
+no terminal rodar o comando:
+
 ```sh
 npm install -g @angular/cli
 ```
@@ -17,6 +19,8 @@ git clone https://github.com/mathosmor/picpay-desafio-frontend.git
 ```
 
 **Instalação de dependências:**
+
+dentro da pasta do projeto rodar:
 
 ```sh
 npm install
