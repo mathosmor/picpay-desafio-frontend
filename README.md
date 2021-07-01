@@ -1,6 +1,15 @@
 # PICPAY-DESAFIO-FRONTEND
 > Aplicação do desafio frontend proposto pelo PICPAY
 
+
+**Instalação do Angular CLI:**
+
+```sh
+npm install -g @angular/cli
+```
+
+***
+
 **Git clone**
 
 ```sh
@@ -11,6 +20,14 @@ git clone https://github.com/mathosmor/picpay-desafio-frontend.git
 
 ```sh
 npm install
+```
+
+***
+
+**Inicialização do projeto:**
+
+```sh
+ng serve
 ```
 
 ***
@@ -38,7 +55,7 @@ Cartão inválido
 
 Na **tela status pagamento**, você receberá uma resposta dizendo se o pagamento foi **realizado com sucesso** ou se o **pagamento não realizado com sucesso**
 
-Mensages de resposta:
+Mensagens de resposta:
 
 **Sucesso**
     
