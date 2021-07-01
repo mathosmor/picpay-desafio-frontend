@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { MatButtonModule, MatListModule, MatProgressSpinnerModule, MatToolbarModule } from '@angular/material';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { CardListComponent } from './card-list.component';
 
-xdescribe('CardListComponent', () => {
+describe('CardListComponent', () => {
   let component: CardListComponent;
   let fixture: ComponentFixture<CardListComponent>;
   let compiled;
@@ -16,6 +17,8 @@ xdescribe('CardListComponent', () => {
         MatButtonModule,
         MatProgressSpinnerModule,
         MatToolbarModule,
+        NgxSkeletonLoaderModule
+
       ]
     })
       .compileComponents();
@@ -36,10 +39,10 @@ xdescribe('CardListComponent', () => {
 
   it('[payment/status-pagamento/resposta-pagamento] Deve verificar se o card foi carregado corretamente', () => {
 
-		expect(compiled.querySelector('#card-list--txt-name-0').textContent.trim()).toBe(component.listItem[0].name);
-		expect(compiled.querySelector('#card-list--img-avatar-0').src).toBe(component.listItem[0].img);
-		expect(compiled.querySelector('#card-list--txt-id-0').textContent.trim()).toBe('ID: ' + component.listItem[0].id);
-		expect(compiled.querySelector('#card-list--txt-username-0').textContent.trim()).toBe('- Username: ' + component.listItem[0].username);
+    expect(compiled.querySelector('#card-list--txt-name-0').textContent.trim()).toBe(component.listItem[0].name);
+    expect(compiled.querySelector('#card-list--img-avatar-0').src).toBe(component.listItem[0].img);
+    expect(compiled.querySelector('#card-list--txt-id-0').textContent.trim()).toBe('ID: ' + component.listItem[0].id);
+    expect(compiled.querySelector('#card-list--txt-username-0').textContent.trim()).toBe('- Username: ' + component.listItem[0].username);
 
   });
 });

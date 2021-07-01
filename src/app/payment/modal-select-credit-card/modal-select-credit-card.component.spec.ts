@@ -8,7 +8,7 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 import { FormBuilder, Validators } from '@angular/forms';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-xdescribe('ModalSelectCreditCardComponent', () => {
+describe('ModalSelectCreditCardComponent', () => {
   let component: ModalSelectCreditCardComponent;
   let fixture: ComponentFixture<ModalSelectCreditCardComponent>;
   let compiled;
@@ -68,7 +68,7 @@ xdescribe('ModalSelectCreditCardComponent', () => {
     paymentValue.dispatchEvent(new Event('input'));
     paymentCreditCard.dispatchEvent(new Event('input'));
 
-    expect(component.formPayment.controls.paymentValue.value).toBe((paymentValue.value).toString());
+    expect(component.formPayment.controls.paymentValue.value).toBe((parseInt(paymentValue.value)));
     expect(component.formPayment.controls.paymentCreditCard.value).toBe(paymentCreditCard.value);
   });
 });

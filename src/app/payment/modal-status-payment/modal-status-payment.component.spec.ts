@@ -1,10 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { ComponentsModule } from 'src/app/shared/components/components.module';
-
 import { ModalStatusPaymentComponent } from './modal-status-payment.component';
 
-xdescribe('ModalStatusPaymentComponent', () => {
+describe('ModalStatusPaymentComponent', () => {
   let component: ModalStatusPaymentComponent;
   let fixture: ComponentFixture<ModalStatusPaymentComponent>;
   let compiled;
@@ -12,13 +11,15 @@ xdescribe('ModalStatusPaymentComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        ComponentsModule
+        ComponentsModule,
+        MatDialogModule,
       ],
       declarations: [
         ModalStatusPaymentComponent
       ],
       providers: [
         { provide: MAT_DIALOG_DATA, useValue: {} },
+        { provide: MatDialogRef, useValue: {} },
       ]
     })
     .compileComponents();
