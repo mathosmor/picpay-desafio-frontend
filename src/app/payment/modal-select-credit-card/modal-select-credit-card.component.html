@@ -1,14 +1,17 @@
 <app-header [title]="title"></app-header>
 
 <form [formGroup]="formPayment">
-  <mat-form-field appearance="fill" class="form-field m-b-30">
+  <mat-form-field appearance="fill" class="form-field m-b-10"
+    [ngClass]="{'invalid': formPayment.controls.paymentValue.errors}">
     <mat-label>Insira o valor do pagamento</mat-label>
-    <input [id]="'modal-select-credit-card--input-value'" matInput currencyMask formControlName="paymentValue"
+    <input [id]="'modal-select-credit-card--input-value'" matInput [min]="1" currencyMask formControlName="paymentValue"
       [options]="maskOptions">
-    <mat-error *ngIf="formPayment.controls.paymentValue.errors && formPayment.controls.paymentValue.touched">
+    <mat-error
+      *ngIf="(formPayment.controls.paymentValue.errors || formPayment.controls.paymentValue.valid) && formPayment.controls.paymentValue.touched">
       {{getErrorMessageValue()}}</mat-error>
   </mat-form-field>
-  <mat-form-field appearance="fill" class="form-field">
+  <mat-form-field appearance="fill" class="form-field m-b-10"
+    [ngClass]="{'invalid': formPayment.controls.paymentValue.errors}">
     <mat-label>Selecione cartão</mat-label>
     <mat-select [id]="'modal-select-credit-card--select-credit-card'" disableRipple="true" [(ngModel)]="selected"
       formControlName="paymentCreditCard">
@@ -20,7 +23,9 @@
   </mat-form-field>
 
   <div class="div-button">
-    <button [id]="'modal-select-credit-card--btn-pay'" mat-raised-button [disabled]="formPayment.invalid"
-      (click)="savePayment()" [ngClass]="{'invalid-button': formPayment.invalid}" class="pay-button">Pagar</button>
+    <button [id]="'modal-select-credit-card--btn-pay'" mat-raised-button
+      [disabled]="formPayment.invalid" (click)="savePayment()"
+      [ngClass]="{'invalid-button': formPayment.invalid}"
+      class="pay-button">Pagar</button>
   </div>
 </form>

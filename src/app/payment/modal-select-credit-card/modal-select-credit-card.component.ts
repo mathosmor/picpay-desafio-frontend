@@ -10,7 +10,7 @@ import { CreditCard } from 'src/app/shared/models/credit-card';
 @Component({
   selector: 'app-modal-select-credit-card',
   templateUrl: './modal-select-credit-card.component.html',
-  styleUrls: ['./modal-select-credit-card.component.scss']
+  styleUrls: ['./modal-select-credit-card.component.scss'],
 })
 export class ModalSelectCreditCardComponent implements OnInit {
 
@@ -40,6 +40,7 @@ export class ModalSelectCreditCardComponent implements OnInit {
     this.createForm();
     this.maskOptions = { prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' };
     this.dataCreditCard = [
+      //valid card
       {
         card_number: '1111111111111111',
         cvv: 789,
@@ -80,7 +81,6 @@ export class ModalSelectCreditCardComponent implements OnInit {
     this.transactionService.saveTransaction(dataTransaction).subscribe(x => {
       this.openDialog(x.success);
     });
-
   }
 
   openDialog(response) {
@@ -96,6 +96,9 @@ export class ModalSelectCreditCardComponent implements OnInit {
   getErrorMessageValue() {
     if (this.formPayment.controls.paymentValue.hasError('required')) {
       return 'Você deve inserir um valor!';
+    }
+    if (this.formPayment.controls.paymentValue.invalid) {
+      return 'Você deve inserir um valor maior que zero!';
     }
   }
 

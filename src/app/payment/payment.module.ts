@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipeModule } from '../shared/pipes/pipe.module';
 import { NgxCurrencyModule } from 'ngx-currency';
+import { CustomFormsModule } from 'ng2-validation'
 
 
 
@@ -28,7 +29,8 @@ import { NgxCurrencyModule } from 'ngx-currency';
     MatProgressSpinnerModule,
     PipeModule,
     ReactiveFormsModule,
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    CustomFormsModule
   ],
   declarations: [
     PaymentComponent,

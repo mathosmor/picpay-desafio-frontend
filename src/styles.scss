@@ -54,3 +54,27 @@ html,
 body {
   height: 100%;
 }
+
+.mat-focused .mat-form-field-label {
+  color: #42b883 !important;
+}
+
+.mat-form-field-underline {
+  background-color: #42b883 !important;
+}
+
+.mat-form-field-ripple {
+  background-color: #42b883 !important;
+}
+
+.mat-option.mat-selected {
+  color: #42b883 !important;
+}
+
+.mat-form-field.ng-invalid.ng-touched .mat-form-field-underline {
+  background-color: #f44336 !important;
+}
+
+.mat-form-field.ng-invalid.ng-touched .mat-form-field-ripple {
+  background-color: #f44336 !important;
+}
