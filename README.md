@@ -28,20 +28,22 @@ Na **tela de selecionar valor e cartão de crédito**, você deve inserir um **v
 
 Atualmente temos 2 cartões de crédito:
 
-* Cartão válido
-    ![](./src/assets/readme/cartao-valido.png)
+Cartão válido
 
-* Cartão inválido
-    ![](./src/assets/readme/cartao-invalido.png)
+![](./src/assets/readme/cartao-valido.png)
+
+Cartão inválido
+
+![](./src/assets/readme/cartao-invalido.png)
 
 Na **tela status pagamento**, você receberá uma resposta dizendo se o pagamento foi **realizado com sucesso** ou se o **pagamento não realizado com sucesso**
 
 Mensages de resposta:
 
-* Cartão válido
-    ![](./src/assets/readme/tela-status-pagamento-sucesso.png)
+Cartão válido
+    
+![](./src/assets/readme/tela-status-pagamento-sucesso.png)
 
-* Cartão inválido
-    ![](./src/assets/readme/tela-status-pagamento-falha.png)
+Cartão inválido
 
-***
+![](./src/assets/readme/tela-status-pagamento-falha.png)
