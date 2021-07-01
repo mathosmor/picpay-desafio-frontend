@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { User } from '../common/models/user';
-import { UserService } from '../common/services/user.service';
+import { User } from '../shared/models/user';
+import { UserService } from '../shared/services/user.service';
 import { ModalSelectCreditCardComponent } from './modal-select-credit-card/modal-select-credit-card.component';
 
 @Component({
@@ -28,6 +28,7 @@ export class PaymentComponent implements OnInit {
   getUsers() {
     this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
+      console.log(users)
     });
   }
 

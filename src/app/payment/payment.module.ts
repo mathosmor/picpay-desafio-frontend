@@ -4,11 +4,11 @@ import { PaymentComponent } from './payment.component';
 import { PaymentRoutingModule } from './payment-routing.module';
 import { ModalSelectCreditCardComponent } from './modal-select-credit-card/modal-select-credit-card.component';
 import { ModalStatusPaymentComponent } from './modal-status-payment/modal-status-payment.component';
-import { WidgetsModule } from '../common/widgets/widgets.module';
+import { ComponentsModule } from '../shared/components/components.module';
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatProgressSpinnerModule, MatSelectModule, MatToolbarModule } from '@angular/material';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PipeModule } from '../common/pipes/pipe.module';
+import { PipeModule } from '../shared/pipes/pipe.module';
 import { NgxCurrencyModule } from 'ngx-currency';
 
 
@@ -18,7 +18,7 @@ import { NgxCurrencyModule } from 'ngx-currency';
     CommonModule,
     FormsModule,
     PaymentRoutingModule,
-    WidgetsModule,
+    ComponentsModule,
     MatToolbarModule,
     MatDialogModule,
     MatSelectModule,

@@ -1,7 +1,3 @@
-<div *ngIf="!listItem" class="uploader-status">
-    <mat-spinner *ngIf="!listItem"></mat-spinner>
-</div>
-
 <mat-list *ngIf="listItem" class="list-content">
     <mat-list-item *ngFor="let item of listItem; let i = index ;last as last">
         <img [id]="'card-list--img-avatar-' + i" matListAvatar class="list-avatar"

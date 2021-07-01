@@ -1,11 +1,11 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
-import { User } from 'src/app/common/models/user';
-import { TransactionPayload } from 'src/app/common/models/transaction-payload';
-import { TransactionPayloadService } from 'src/app/common/services/transaction-payload.service';
+import { User } from 'src/app/shared/models/user';
+import { TransactionPayload } from 'src/app/shared/models/transaction-payload';
+import { TransactionPayloadService } from 'src/app/shared/services/transaction-payload.service';
 import { ModalStatusPaymentComponent } from '../modal-status-payment/modal-status-payment.component';
-import { CreditCard } from 'src/app/common/models/credit-card';
+import { CreditCard } from 'src/app/shared/models/credit-card';
 
 @Component({
   selector: 'app-modal-select-credit-card',

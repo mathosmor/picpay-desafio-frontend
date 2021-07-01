@@ -2,14 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { User } from '../models/user';
+import { TransactionPayload } from '../models/transaction-payload';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class TransactionPayloadService {
 
-  url = 'https://www.mocky.io/v2/5d531c4f2e0000620081ddce';
+  url = `${environment.PPAY}`;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,11 +18,12 @@ export class UserService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json; charset=UTF-8' })
   }
 
-  public getUsers(): Observable<User[]> {
-    return this.httpClient.get<User[]>(this.url)
+  saveTransaction(dataTransaction: TransactionPayload): Observable<TransactionPayload> {
+    return this.httpClient.post<TransactionPayload>(this.url, JSON.stringify(dataTransaction), this.httpOptions)
       .pipe(
         retry(2),
-        catchError(this.handleError))
+        catchError(this.handleError)
+      )
   }
 
   handleError(error: HttpErrorResponse) {

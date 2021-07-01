@@ -10,6 +10,8 @@ export class ModalStatusPaymentComponent implements OnInit {
 
   response: string;
 
+  title = 'Recibo de pagamento';
+
   constructor(@Inject(MAT_DIALOG_DATA) public responsePayment: boolean) { }
 
   ngOnInit() {
