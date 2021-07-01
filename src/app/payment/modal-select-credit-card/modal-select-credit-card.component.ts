@@ -1,7 +1,7 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
-import { User } from 'src/app/shared/models/user';
+import { DataUser, User } from 'src/app/shared/models/user';
 import { TransactionPayload } from 'src/app/shared/models/transaction-payload';
 import { TransactionPayloadService } from 'src/app/shared/services/transaction-payload.service';
 import { ModalStatusPaymentComponent } from '../modal-status-payment/modal-status-payment.component';
@@ -28,7 +28,7 @@ export class ModalSelectCreditCardComponent implements OnInit {
     public dialog: MatDialog,
     private transactionService: TransactionPayloadService,
     private fb: FormBuilder,
-    @Inject(MAT_DIALOG_DATA) public dataUser: any) { }
+    @Inject(MAT_DIALOG_DATA) public dataUser: DataUser) { }
 
   ngOnInit() {
     this.initialize()
@@ -54,7 +54,6 @@ export class ModalSelectCreditCardComponent implements OnInit {
     ];
   }
 
-  //TODO: BrMaskDirective.brmasker: BrMaskModel
   createForm() {
     this.formPayment = this.fb.group({
       paymentValue: [null, Validators.required],
@@ -74,7 +73,7 @@ export class ModalSelectCreditCardComponent implements OnInit {
       card_number: creditCard.card_number,
       cvv: creditCard.cvv,
       expiry_date: creditCard.cvv,
-      destination_user_id: this.dataUser.id,
+      destination_user_id: this.user.id,
       value: value,
     };
 
@@ -88,7 +87,7 @@ export class ModalSelectCreditCardComponent implements OnInit {
     this.formPayment.reset();
     this.dialog.closeAll()
     this.dialog.open(ModalStatusPaymentComponent, {
-      height: '200px',
+      height: '250px',
       width: '600px',
       data: response,
     });

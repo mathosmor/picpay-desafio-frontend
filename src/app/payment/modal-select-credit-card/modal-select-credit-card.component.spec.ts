@@ -40,25 +40,35 @@ xdescribe('ModalSelectCreditCardComponent', () => {
       paymentValue: [null, Validators.required],
       paymentCreditCard: [null, Validators.required],
     });
+    component.dataUser = {
+      user: {
+        item: {
+          id: 1001,
+          name: "Eduardo Santos",
+          img: "https://randomuser.me/api/portraits/men/9.jpg",
+          username: "@eduardo.santos",
+        }
+      }
+    }
+
     fixture.detectChanges();
   });
 
-  it('[payment/selecionarCartao/formularios] Deve vincular os valores preenchidos nos formulários com as propriedades do formulário.', async () => {
+  it('[payment/selecionarCartao/formularios] Deve vincular os valores preenchidos nos formulários com as propriedades do formulário.', () => {
+    component.formPayment.controls['paymentValue'].setValue(2000);
+    component.formPayment.controls['paymentCreditCard'].setValue('1111111111111111')
     const paymentValue = compiled.querySelector('#modal-select-credit-card--input-value');
     const paymentCreditCard = compiled.querySelector('#modal-select-credit-card--select-credit-card');
 
-    fixture.detectChanges();
-
+    
     paymentValue.value = 2000;
     paymentCreditCard.value = '1111111111111111';
+    fixture.detectChanges();
 
     paymentValue.dispatchEvent(new Event('input'));
     paymentCreditCard.dispatchEvent(new Event('input'));
 
-    fixture.detectChanges();
-
-
-    expect(component.formPayment.controls.paymentValue.value).toBe(paymentValue.value);
+    expect(component.formPayment.controls.paymentValue.value).toBe((paymentValue.value).toString());
     expect(component.formPayment.controls.paymentCreditCard.value).toBe(paymentCreditCard.value);
   });
 });

@@ -9,7 +9,7 @@ import { User } from '../../models/user';
 export class CardListComponent implements OnInit {
 
   @Input()
-  listItem: User;
+  listItem: User[] = [];
 
   @Output() 
   buttonClick: EventEmitter<any> = new EventEmitter();
@@ -21,6 +21,14 @@ export class CardListComponent implements OnInit {
 
   buttonClickResponse(item) {
     this.buttonClick.emit({item})
+  }
+
+  generateFake(count): Array<number> {
+    const indexes = [];
+    for (let i = 0; i < count; i++) {
+      indexes.push(i);
+    }
+    return indexes;
   }
 
 }

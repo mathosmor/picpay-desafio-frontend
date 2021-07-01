@@ -1,19 +1,4 @@
 :host {
-  @keyframes btn {
-    0% {
-      opacity: 0%;
-    }
-    25% {
-      opacity: 25%;
-    }
-    50% {
-      opacity: 75%;
-    }
-    100% {
-      opacity: 100%;
-    }
-  }
-
   .form-field {
     width: 100% !important;
   }
@@ -33,9 +18,11 @@
       width: 200px;
       font-family: "Lato";
       font-size: 19px;
-      animation-name: btn;
-      animation-duration: 0.5s;
+      margin-top: 20px;
+    }
+
+    .invalid-button {
+      opacity: 40%;
     }
   }
-
 }

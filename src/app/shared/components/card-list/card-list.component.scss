@@ -12,7 +12,6 @@
     }
 
     .list-item {
-        
         .list-id,
         .list-username {
             font-size: 16px;
@@ -38,6 +37,27 @@
 .uploader-status ::ng-deep .mat-progress-spinner circle,
 .mat-spinner circle {
     stroke: #42b883;
+}
+
+.skeleton {
+    display: flex;
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 8px;
+    .circle {
+        display: flex;
+        flex-direction: column;
+        width: 75px;
+    }
+    .lines {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+
+        .small {
+            width: 60%;
+        }
+    }
 }
 
 @media only screen and (max-width: 600px) {

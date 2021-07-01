@@ -19,6 +19,20 @@
     }
   }
 
+  .dismiss {
+    display: flex;
+    justify-content: center;
+
+    .dismiss-button {
+      background-color: #42b883;
+      color: white;
+      width: 200px;
+      font-family: "Lato";
+      font-size: 19px;
+      margin-top: 20px;
+    }
+  }
+
   @media only screen and (max-width: 600px) {
     .status-response {
       span {

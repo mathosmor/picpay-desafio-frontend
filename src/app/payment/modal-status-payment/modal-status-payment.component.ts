@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-modal-status-payment',
@@ -12,7 +12,11 @@ export class ModalStatusPaymentComponent implements OnInit {
 
   title = 'Recibo de pagamento';
 
-  constructor(@Inject(MAT_DIALOG_DATA) public responsePayment: boolean) { }
+  constructor(
+    @Inject(MAT_DIALOG_DATA)
+    public responsePayment: boolean,
+    public dialog: MatDialog,
+  ) { }
 
   ngOnInit() {
     this.getTransactionData();
@@ -24,6 +28,10 @@ export class ModalStatusPaymentComponent implements OnInit {
     } else {
       this.response = `O pagamento <b>não</b> foi realizado com sucesso.`
     }
+  }
+
+  dismiss() {
+    this.dialog.closeAll()
   }
 
 }

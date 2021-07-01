@@ -28,7 +28,6 @@ export class PaymentComponent implements OnInit {
   getUsers() {
     this.userService.getUsers().subscribe((users: User[]) => {
       this.users = users;
-      console.log(users)
     });
   }
 

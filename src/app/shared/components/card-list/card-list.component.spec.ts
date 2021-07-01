@@ -3,17 +3,10 @@ import { MatButtonModule, MatListModule, MatProgressSpinnerModule, MatToolbarMod
 
 import { CardListComponent } from './card-list.component';
 
-fdescribe('CardListComponent', () => {
+xdescribe('CardListComponent', () => {
   let component: CardListComponent;
   let fixture: ComponentFixture<CardListComponent>;
   let compiled;
-
-  const user = {
-    id: 1001,
-    name: "Eduardo Santos",
-    img: "https://randomuser.me/api/portraits/men/9.jpg",
-    username: "@eduardo.santos",
-  }
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -32,23 +25,22 @@ fdescribe('CardListComponent', () => {
     fixture = TestBed.createComponent(CardListComponent);
     component = fixture.componentInstance;
     compiled = fixture.debugElement.nativeElement;
-    // component.listItem = user;
+    component.listItem = [{
+      id: 1001,
+      name: "Eduardo Santos",
+      img: "https://randomuser.me/api/portraits/men/9.jpg",
+      username: "@eduardo.santos",
+    }];
     fixture.detectChanges();
   });
 
-  it('[payment/status-pagamento/resposta-pagamento] Deve verificar se a resposta foi exibida corretamente', async () => {
-    // const name = compiled.querySelector('#card-list--txt-name-0');
+  it('[payment/status-pagamento/resposta-pagamento] Deve verificar se o card foi carregado corretamente', () => {
 
-    // name.value = 'Eduardo Santos';
+		expect(compiled.querySelector('#card-list--txt-name-0').textContent.trim()).toBe(component.listItem[0].name);
+		expect(compiled.querySelector('#card-list--img-avatar-0').src).toBe(component.listItem[0].img);
+		expect(compiled.querySelector('#card-list--txt-id-0').textContent.trim()).toBe('ID: ' + component.listItem[0].id);
+		expect(compiled.querySelector('#card-list--txt-username-0').textContent.trim()).toBe('- Username: ' + component.listItem[0].username);
 
-    // console.info(name)
-    
-
-    // fixture.detectChanges();
-
-    // expect(component.listItem.name).toBe(name.value);
-
-    // expect(component.response).toBe(response.value);
   });
 });
 
