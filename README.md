@@ -40,10 +40,10 @@ Na **tela status pagamento**, você receberá uma resposta dizendo se o pagament
 
 Mensages de resposta:
 
-Cartão válido
+**Sucesso**
     
 ![](./src/assets/readme/tela-status-pagamento-sucesso.png)
 
-Cartão inválido
+**Falha**
 
 ![](./src/assets/readme/tela-status-pagamento-falha.png)
